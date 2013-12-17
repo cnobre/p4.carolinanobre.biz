@@ -1,6 +1,6 @@
 <?php
 
-class index_controller extends base_controller {
+class cruises_controller extends base_controller {
 	
 	/*-------------------------------------------------------------------------------------------------
 
@@ -10,16 +10,16 @@ class index_controller extends base_controller {
 	} 
 		
 	/*-------------------------------------------------------------------------------------------------
-	Accessed via http://localhost/index/index/
+	Accessed via http://localhost/cruises/index/
 	-------------------------------------------------------------------------------------------------*/
 	public function index() {	
 		
 		# Any method that loads a view will commonly start with this
 		# First, set the content of the template with a view file
-			$this->template->content = View::instance('v_index_index');
+			$this->template->content = View::instance('v_cruises_index');
 			
 		# Now set the <title> tag
-			$this->template->title = "DBO - Home";
+			$this->template->title = "DBO - Cruise Search";
 	
 		# CSS/JS includes
 			/*
@@ -29,9 +29,7 @@ class index_controller extends base_controller {
 	    	$client_files_body = Array("");
 	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
 	    	*/
-	    	
-
-          					     		
+	      					     		
 		# Render the view
 			echo $this->template;
 
