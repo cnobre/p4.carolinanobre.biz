@@ -77,8 +77,13 @@
                   </h3>
                </div>
                <div class="panel-body">
-                  <select id = "sDate" class="selectpicker" data-live-search="true" >
+                  <select id = "year" class="selectpicker" data-live-search="true" >
                      <option value='0'>Any</option>
+                     <?php 
+						 foreach ($year as $value)
+						 {echo ("<option value='".$value['year']."'>".$value['year']."</option>\n");					 
+						 }?>
+
                   </select>
                </div>
             </div>

@@ -1,4 +1,6 @@
 
+
+
 $('select').change(function() {
 
     $.ajax({
@@ -13,8 +15,6 @@ $('select').change(function() {
             $('#results').html(response);
         },
         data: {
-            //value: $(this).val(),
-            //header:$(this).get(0).id, 
             chiefSci: $('#chiefSci').val(),
             dboLine: $('#dboLine').val(),
             vessel: $('#vessel').val(),

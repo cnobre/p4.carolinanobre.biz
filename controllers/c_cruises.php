@@ -28,7 +28,7 @@ class cruises_controller extends base_controller
         # Query Database
         $results = DB::instance(DB_NAME)->select_rows($q);
         
-       $this->template->content->dboLine =($results);
+        $this->template->content->dboLine = ($results);
         
         $q       = "SELECT DISTINCT chiefSci FROM cruises";
         # Query Database
@@ -48,15 +48,36 @@ class cruises_controller extends base_controller
         
         $this->template->content->cruiseID = ($results);
         
-       
+        $q       = "SELECT DISTINCT year FROM cruises ORDER BY year";
+        # Query Database
+        $results = DB::instance(DB_NAME)->select_rows($q);
+        
+        $this->template->content->year = ($results);
+        
+        
         
         $client_files_body                 = Array(
             "/js/cruises_search.js"
         );
         $this->template->client_files_body = Utils::load_client_files($client_files_body);
         
+        
         # Render the view
         echo $this->template;
+        
+        $view = new View('v_cruises_p_search');
+        //$view->name=($_POST['name']);
+        
+        $q       = "SELECT * FROM cruises";
+        # Query Database
+        $results = DB::instance(DB_NAME)->select_rows($q);
+        
+        $view->data = ($results);
+        
+        
+        #Render the view
+        //echo $view;
+        
         
     } # End of method
     
@@ -83,7 +104,7 @@ class cruises_controller extends base_controller
         
         # Checking for empty fields
         
-        if ("" == trim($_POST['contactName']) || "" == trim($_POST['contactEmail']) || "" == trim($_POST['dboLine']) || "" == trim($_POST['chiefSci'] || "" == trim($_POST['vessel'] || "" == trim($_POST['cruiseID']) || "" == trim($_POST['sDate']) || "" == trim($_POST['eDate'])))) {
+        if ("" == trim($_POST['contactName']) || "" == trim($_POST['contactEmail']) || "0" == trim($_POST['dboLine']) || "" == trim($_POST['chiefSci'] || "" == trim($_POST['vessel'] || "" == trim($_POST['cruiseID']) || "" == trim($_POST['sDate']) || "" == trim($_POST['eDate'])))) {
             Router::redirect("/cruises/submit/missingField");
         }
         
@@ -100,15 +121,52 @@ class cruises_controller extends base_controller
             Router::redirect('/cruises/submit/cruiseExists');
         }
         
+        
+        
         $_POST['status'] = 'submitted';
         
+        $_POST['sDate'] = strtotime($_POST['sDate']);
         
-        DB::instance(DB_NAME)->insert('cruises', $_POST);
+        $_POST['eDate'] = strtotime($_POST['eDate']);
         
+        $_POST['year'] = date('Y', $_POST['sDate']);
+        
+        # If start date is after end date
+        if ($_POST['sDate'] > $_POST['eDate']) {
+            //Redirect to error page 
+            Router::redirect('/cruises/submit/invalidDates');
+        }
+        
+        if (!filter_var(trim($_POST['contactEmail']), FILTER_VALIDATE_EMAIL)) {
+            //Redirect to error page 
+            Router::redirect('/cruises/submit/invalidEmail');
+            
+        }
+        
+        print_r($_FILES);
+        
+        if ($_FILES['file']['size']=='0'){
+        Router::redirect('/cruises/submit/nofilesuploaded')   ;
+        };
         
         //print_r($_POST);
+        $file = Upload::upload($_FILES, "/uploads/data/", array(
+            "txt",
+            "zip",
+            "cnv"
+        ), $_POST['cruiseID']);
         
-        Router::redirect("/cruises/thanks");
+        if ($file == 'Invalid file type.') {
+            // return an error
+            Router::redirect("/cruises/submit/filetype");
+        } else {
+            
+            DB::instance(DB_NAME)->insert('cruises', $_POST);
+            
+            Router::redirect("/cruises/thanks");
+        }
+        
+        
         
     }
     
@@ -129,44 +187,52 @@ class cruises_controller extends base_controller
         
         //print_r($_POST);
         
-        $dboLine = $_POST['dboLine'];
+        $dboLine  = $_POST['dboLine'];
         $chiefSci = $_POST['chiefSci'];
-        $cruiseID = $_POST['cruiseID']; 
-        $vessel = $_POST['vessel'];
-                
+        $cruiseID = $_POST['cruiseID'];
+        $vessel   = $_POST['vessel'];
+        $year     = $_POST['year'];
+        
         $view = new View('v_cruises_p_search');
         
         //$q = "SELECT * FROM cruises WHERE " . $_POST['header'] . " = '" . $_POST['value'] . "'";
         
         unset($sql);
         
-        if ($dboLine>0) {
-			$sql[] = " dboLine = '$dboLine' ";
-		}
-		
-		if ($chiefSci!='0') {
-			$sql[] = " chiefSci = '$chiefSci' ";
-		}
-		
-	    if ($cruiseID!='0') {
-			$sql[] = " cruiseID = '$cruiseID' ";
-		}
-		
-	    if ($vessel!='0') {
-			$sql[] = " vessel = '$vessel' ";
-		}
-		
-		$query = "SELECT * FROM cruises";
-		
-		if (!empty($sql)) {
-		    $query .= ' WHERE ' . implode(' AND ', $sql);
-		    
-		 }
-		
-		//echo $query;
-
- 
-              # Query Database
+        if ($dboLine > 0) {
+            $sql[] = " dboLine = '$dboLine' ";
+        }
+        
+        if ($chiefSci != '0') {
+            $sql[] = " chiefSci = '$chiefSci' ";
+        }
+        
+        if ($cruiseID != '0') {
+            $sql[] = " cruiseID = '$cruiseID' ";
+        }
+        
+        if ($vessel != '0') {
+            $sql[] = " vessel = '$vessel' ";
+        }
+        
+        if ($year != '0') {
+            $sql[] = " year = '$year' ";
+        }
+        
+        $query = "SELECT * FROM cruises";
+        
+        if (!empty($sql)) {
+            $query .= ' WHERE ' . implode(' AND ', $sql) .'ORDER BY year';
+            
+        }
+        else{
+	        $query .=' ORDER BY year';
+        }
+        
+        //echo $query;
+        
+        
+        # Query Database
         $cruise = DB::instance(DB_NAME)->select_rows($query);
         
         //$view->name=($_POST['name']);

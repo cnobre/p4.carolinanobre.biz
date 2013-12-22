@@ -72,12 +72,18 @@ body {
 	
 .error {
 color:red; 
-background-color: white;
+/*background-color: white;*/
 font-size: 16px;
 padding: 10px 10px 10px 10px;
 font-weight: bold;
 text-align: center;
+display:none;
 }
+
+.server_error{
+	display: inline;
+}
+
 
 .selectpicker {
 	font-size:18px;
@@ -94,7 +100,7 @@ text-align: center;
 }
 
 .submitted{
-	background-color:rgba(242,216,17,0.5);
+	color:red;
 	
 }
 
@@ -106,6 +112,13 @@ text-align: center;
 .available{
 	background-color:rgba(67,148,86,0.5);
 	
+}
+
+
+
+.date_element{
+	font-size: 20px;
+	height: 30px;
 }
 	
 	
