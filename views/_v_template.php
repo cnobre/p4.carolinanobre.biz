@@ -4,8 +4,7 @@
 	<title><?php if(isset($title)) echo $title; ?></title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>Cruise Search</title>
-      
+            
       <script src="http://d3js.org/d3.v3.min.js"></script>
       
            
@@ -71,9 +70,9 @@
                 <li class="divider"></li>
                 <li class="dropdown-header">ADCP Data</li>
                 <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>-->
+                <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li>-->
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -145,9 +145,10 @@ class cruises_controller extends base_controller
         
         print_r($_FILES);
         
-        if ($_FILES['file']['size']=='0'){
-        Router::redirect('/cruises/submit/nofilesuploaded')   ;
-        };
+        if ($_FILES['file']['size'] == '0') {
+            Router::redirect('/cruises/submit/nofilesuploaded');
+        }
+        ;
         
         //print_r($_POST);
         $file = Upload::upload($_FILES, "/uploads/data/", array(
@@ -222,11 +223,10 @@ class cruises_controller extends base_controller
         $query = "SELECT * FROM cruises";
         
         if (!empty($sql)) {
-            $query .= ' WHERE ' . implode(' AND ', $sql) .'ORDER BY year';
+            $query .= ' WHERE ' . implode(' AND ', $sql) . 'ORDER BY year';
             
-        }
-        else{
-	        $query .=' ORDER BY year';
+        } else {
+            $query .= ' ORDER BY year';
         }
         
         //echo $query;
