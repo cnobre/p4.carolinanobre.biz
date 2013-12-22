@@ -9,9 +9,11 @@
       <script src="http://d3js.org/d3.v3.min.js"></script>
       
       <!-- Heat Map files -->
-      <link href="css/cal-heatmap.css" rel="stylesheet">
+      <link href="/css/cal-heatmap.css" rel="stylesheet">
       
-      <script src="js/cal-heatmap.js"></script>
+      <script src="/js/cal-heatmap.js"></script>
+      
+       <!--<script src="/js/bootstrap-datepicker.js"></script>-->
       
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -20,12 +22,22 @@
       <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
       
       
-      <link href="css/bootstrap-select.min.css" rel="stylesheet">
+      <link href="/css/bootstrap-select.min.css" rel="stylesheet">
       <!-- Custom styles for this template -->
-      <link href="css/theme.css" rel="stylesheet">
-      <!--<link href="css/grid.css" rel="stylesheet">-->
+      <link href="/css/theme.css" rel="stylesheet">
+      <link href="/css/grid.css" rel="stylesheet">
       
-      <link href="css/font-awesome.css" rel="stylesheet">
+      <link href="/css/font-awesome.css" rel="stylesheet">
+      <link href="/css/datepicker.css" rel="stylesheet">
+      
+      	     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="/js/data.js"></script>
+      <!--<script src="/js/dbo.js"></script>-->
+      <script src="/js/error_checking.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+      <script src="http://silviomoreto.github.io/bootstrap-select/javascripts/bootstrap-select.js"></script>
+      
       
    
 	<!-- Controller Specific JS/CSS -->
@@ -48,9 +60,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Download Data</a></li>
-            <li><a href="#contact">Submit Data</a></li>
+            <li><a href = '/'> Home</a></li>
+            <li><a href = '/cruises/'> Download Data</a></li>
+            <li><a href = '/cruises/submit'> Submit Data</a></li>
              <li><a href="#contact">Contact Us</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Format <b class="caret"></b></a>
@@ -73,5 +85,11 @@
 
 
 	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+
+      <script type="text/javascript">
+         $(document).ready(function(e) {
+             $('.selectpicker').selectpicker();
+         });
+      </script>
 </body>
 </html>

@@ -27,6 +27,7 @@ body {
 .btn-lg{
 	height:50px;
 	font-size:20px;
+	
 }
 
 .remove{
@@ -37,6 +38,7 @@ body {
 
 .get_data{
 	padding-top:10px;
+	text-align:center;
 		
 }
 
@@ -68,6 +70,44 @@ body {
 	text-align: center;
 	}
 	
+.error {
+color:red; 
+background-color: white;
+font-size: 16px;
+padding: 10px 10px 10px 10px;
+font-weight: bold;
+text-align: center;
+}
+
+.selectpicker {
+	font-size:18px;
+}
+
+.font_lg{
+	font-size:18px;
+}
+
+.well{
+	background-image: none;
+	background-color:#d1dee6;
+	
+}
+
+.submitted{
+	background-color:rgba(242,216,17,0.5);
+	
+}
+
+.missing{
+	background-color:rgba(242,122,17,0.5);
+	
+}
+
+.available{
+	background-color:rgba(67,148,86,0.5);
+	
+}
+	
 	
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -76,6 +116,16 @@ body {
 .marketing {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.padded {
+padding: 5px 10px 20px 10px;
+
+
+}
+
+.full_width{
+width:100%;
 }
 
 /* Center align the text within the three columns below the carousel */

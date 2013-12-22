@@ -98,25 +98,9 @@
          </div>
       </div>
       
-      <div class = "well"> Features to implement for P4: 
-      <ul>
-      <li>The functionality of the "Get Cruise Data" buttons (get data from server) </li>
-      <li>Store data in SQL database instead of data.js file</li>
-      <li> Ability to submit data as well as retrieve data</li> 
-      </ul> 
-       </div>
+      
       </div>
       
       
       
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="js/data.js"></script>
-      <script src="js/dbo.js"></script>
-      <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-      <script src="http://silviomoreto.github.io/bootstrap-select/javascripts/bootstrap-select.js"></script>
-      <script type="text/javascript">
-         $(document).ready(function(e) {
-             $('.selectpicker').selectpicker();
-         });
-      </script>
+ 

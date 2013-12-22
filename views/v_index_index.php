@@ -35,7 +35,7 @@
         <div class="col-lg-4">
           <a href="#"><i class="icon-question"></i></a>
           <h2><a href="#">Read More about DBO</a></h2>
-          <p>Click here to read more about the DBO transects.</p>
+          <p>Click here to read more about the DBO transects and any FAQ</p>
             </div><!-- /.col-lg-4 -->
             
       </div><!-- /.row -->
