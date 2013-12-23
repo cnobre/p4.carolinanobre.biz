@@ -12,18 +12,21 @@ database for cruise info from other cruises.
 To submit meta data,  all fields are required.
 
 When searching for other cruises, the user can filter the cruises by 
-several criteria:
- 1) DBO Line
- 2) Chief Scientist 
- 3) Cruise ID
- 4) Vessel
- 5) Year
+several criteria (DBO Line, Chief Scientist, Cruise ID, Vessel, Year)
 
 Application Features: 
  1) Ability to submit cruise metadata to the database.
  2) Field Validation on both the client side (JavaScript) and server side (PHP)
- 3) Ability to filter cruises in database by several criteria (done through ajax calls)
- 4) Filter option elements are dynamically created based on database contents
+ 3) Field validation (on both client and server sides) include:
+ 	 - non empty fields
+ 	 - valid email format 
+ 	 - cruise start date is before cruise end date
+ 	 
+ 4) Duplicate cruises (identified by the cruise ID) are identified and not 
+ allowed to be re-submitted
+ 	 
+ 5) Ability to filter cruises in database by several criteria (done through ajax calls)
+ 6) Filter option elements are dynamically created based on database contents
  
 
 JavaScript managed features: 
