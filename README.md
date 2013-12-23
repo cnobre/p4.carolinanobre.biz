@@ -23,6 +23,7 @@ Application Features:
  1) Ability to submit cruise metadata to the database.
  2) Field Validation on both the client side (JavaScript) and server side (PHP)
  3) Ability to filter cruises in database by several criteria (done through ajax calls)
+ 4) Filter option elements are dynamically created based on database contents
  
 
 JavaScript managed features: 

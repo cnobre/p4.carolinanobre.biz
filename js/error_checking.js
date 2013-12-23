@@ -52,17 +52,16 @@ function validateEmail($email) {
 }
 
 $('#cruiseID').blur(function () {
-
-
     // Figure out what the user typed in
     var name = $(this).val();
+    
 
     if (name.trim().length == 0) {
-        console.log('found it');
-        $('#criuseID_error').css('display', 'inline');
-        $('#cruiseID_error').html('Please input a Cruise ID.');
+         console.log('almost there');
+        $('#test_error').css('display', 'inline');
+        $('#test_error').html('Please input a Cruise ID.');
     } else {
-        $('#cruiseID_error').css('display', 'none');
+        $('#test_error').css('display', 'none');
     }
 
 
@@ -92,7 +91,7 @@ $('#vessel').blur(function () {
 
     if (name.trim().length == 0) {
         $('#vessel_error').css('display', 'inline');
-        $('#vessel_error').html('Please input a Contact Name!');
+        $('#vessel_error').html('Please input a Vessel Name!');
     } else {
         $('#vessel_error').css('display', 'none');
     }

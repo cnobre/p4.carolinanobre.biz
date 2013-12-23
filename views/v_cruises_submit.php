@@ -37,7 +37,7 @@
                <span class="input-group-addon">Cruise ID</span>
                <input type="text" class="form-control"  name="cruiseID" placeholder="ex: HLY1303" id="cruiseID">
             </div>
-            <div class="error" id="cruiseID_error"> </div>
+             <div class="error" id="test_error"> </div>
             <div class="input-group input-group-lg padded">
                <span class="input-group-addon">Chief Scientist</span>
                <input type="text" class="form-control"  name="chiefSci" placeholder="Chief Scientist" id="chiefSci">

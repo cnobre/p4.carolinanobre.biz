@@ -27,8 +27,7 @@
       
       	     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="/js/data.js"></script>
-      <!--<script src="/js/dbo.js"></script>-->
+
       
       
       <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
