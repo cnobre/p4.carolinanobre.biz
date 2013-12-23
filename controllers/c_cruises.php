@@ -121,8 +121,7 @@ class cruises_controller extends base_controller
             Router::redirect('/cruises/submit/cruiseExists');
         }
         
-        
-        
+         
         $_POST['status'] = 'submitted';
         
         $sdate = strtotime($_POST['sDate']);
@@ -138,7 +137,6 @@ class cruises_controller extends base_controller
         $_POST['sDate']=$sdate;
         $_POST['eDate']=$edate;
         
-        print_r($_POST);
         
         # If start date is after end date
         if ($sdate> $edate) {
