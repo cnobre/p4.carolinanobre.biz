@@ -138,12 +138,14 @@ class cruises_controller extends base_controller
         $_POST['sDate']=$sdate;
         $_POST['eDate']=$edate;
         
+        print_r($_POST);
+        
         # If start date is after end date
-        /*if ($sdate> $edate) {
+        if ($sdate> $edate) {
             //Redirect to error page 
             echo ('this is the end date' . $edate);
             Router::redirect('/cruises/submit/invalidDates');
-        }*/
+        }
         
         if (!filter_var(trim($_POST['contactEmail']), FILTER_VALIDATE_EMAIL)) {
             //Redirect to error page 

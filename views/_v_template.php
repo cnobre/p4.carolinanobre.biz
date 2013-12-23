@@ -87,7 +87,7 @@
          $(document).ready(function(e) {
              $('.selectpicker').selectpicker();
              $('.datepicker').datepicker({
-				 format: 'mm-dd-yyyy',
+				 format: 'dd-mm-yyyy',
 				 viewMode: 'years'
 				 });
          });
