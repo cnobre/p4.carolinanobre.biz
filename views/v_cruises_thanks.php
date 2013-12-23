@@ -4,12 +4,12 @@
    <div class="row well">
       <div class="col-lg-4">
          <h2><a href="/cruises/">Browse Database</a></h2>
-         <p>Click here to Browse through DBO cruises on any of the 5 DBO transects. </p>
+         <p>Click here to Browse through other DBO cruises on the database. </p>
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-lg-4">
-         <h2><a href="/cruises/submit">Submit Metadata</a></h2>
-         <p>Click here to Submit your Cruise Metadata to the DBO PO Database.</p>
+         <h2><a href="/cruises/submit">Submit Another Cruise</a></h2>
+         <p>Click here to Submit another Cruise Metadata to the Database.</p>
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-lg-4">

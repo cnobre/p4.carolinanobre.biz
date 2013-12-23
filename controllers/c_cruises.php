@@ -100,7 +100,7 @@ class cruises_controller extends base_controller
     
     public function p_submit()
     {
-        
+        //print_r($_POST);
         
         # Checking for empty fields
         
@@ -125,17 +125,25 @@ class cruises_controller extends base_controller
         
         $_POST['status'] = 'submitted';
         
-        $_POST['sDate'] = strtotime($_POST['sDate']);
+        $sdate = strtotime($_POST['sDate']);
         
-        $_POST['eDate'] = strtotime($_POST['eDate']);
+        //print('This is the end date before conversion ' . $_POST['eDate']);
         
-        $_POST['year'] = date('Y', $_POST['sDate']);
+        $edate= strtotime($_POST['eDate']);
+        
+        //print('This is the end date after conversion ' . $edate);
+        
+        $_POST['year'] = date('Y', $sdate);
+        
+        $_POST['sDate']=$sdate;
+        $_POST['eDate']=$edate;
         
         # If start date is after end date
-        if ($_POST['sDate'] > $_POST['eDate']) {
+        /*if ($sdate> $edate) {
             //Redirect to error page 
+            echo ('this is the end date' . $edate);
             Router::redirect('/cruises/submit/invalidDates');
-        }
+        }*/
         
         if (!filter_var(trim($_POST['contactEmail']), FILTER_VALIDATE_EMAIL)) {
             //Redirect to error page 

@@ -4,7 +4,7 @@
 <div class="row">
    <div class="col-md-8">
       <div class="well">
-         <form method ='POST' action = '/cruises/p_submit' id="submit_data_form" enctype="multipart/form-data">
+         <form method ='POST' action = '/cruises/p_submit' id="submit_data_form">
             <div class="input-group input-group-lg padded" >
                <span class="input-group-addon">Name</span>
                <input type="text" class="form-control"  name="contactName" placeholder="Contact person for data" id="contactName">
