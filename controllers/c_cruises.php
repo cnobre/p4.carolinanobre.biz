@@ -143,7 +143,11 @@ class cruises_controller extends base_controller
             
         }
         
-        print_r($_FILES);
+         DB::instance(DB_NAME)->insert('cruises', $_POST);
+            
+            Router::redirect("/cruises/thanks");
+        
+        /*print_r($_FILES);
         
         if ($_FILES['file']['size'] == '0') {
             Router::redirect('/cruises/submit/nofilesuploaded');
@@ -165,7 +169,7 @@ class cruises_controller extends base_controller
             DB::instance(DB_NAME)->insert('cruises', $_POST);
             
             Router::redirect("/cruises/thanks");
-        }
+        }*/
         
         
         

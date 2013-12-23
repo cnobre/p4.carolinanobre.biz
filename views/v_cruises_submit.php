@@ -56,12 +56,11 @@
             <div class="error" id="vessel_error"> </div>
 
 
-			<!--<div class="input-group input-group-lg padded">
+		   <div class="input-group input-group-lg padded">
                
-				<input type="file" name="file" id="file"><br>
+				<!--<input type="file" name="file" id="file"><br>
                            </div>-->
-            <!--<div class="error" id="vessel_error"> </div>-->
-                      
+                                 
         <div class = " get_data" >
     <input type ='submit' class="btn btn-lg btn-primary" value = 'Submit Cruise Info'>
     </div>
